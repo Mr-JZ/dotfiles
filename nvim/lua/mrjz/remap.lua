@@ -15,12 +15,17 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- toggle nvim-tree
 vim.keymap.set("n", "<leader>b", vim.cmd.NvimTreeToggle)
 
+-- use the javadocMethod file
 vim.keymap.set("n", "<leader>cm", ":luafile ~/.config/nvim/lua/mrjz/javadocMethod.lua<CR>")
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
+
+-- to past from the buffer
+vim.keymap.set("n", "<leader>p", [["+p]])
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])

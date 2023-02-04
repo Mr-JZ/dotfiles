@@ -26,7 +26,7 @@ return require('packer').startup(function(use)
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
 
-    use {
+    use ({
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
         requires = {
@@ -47,7 +47,7 @@ return require('packer').startup(function(use)
             { 'L3MON4D3/LuaSnip' },
             { 'rafamadriz/friendly-snippets' },
         }
-    }
+    })
 
     use({
         'nvim-tree/nvim-tree.lua',
@@ -58,12 +58,18 @@ return require('packer').startup(function(use)
     })
     use("folke/zen-mode.nvim")
     use("github/copilot.vim")
-    -- install without yarn or npm
-    use({
-        "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end,
-    })
 
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+    use ({ "akinsho/toggleterm.nvim", tag = '*', config = function()
+        require("toggleterm").setup()
+    end })
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
 end)
