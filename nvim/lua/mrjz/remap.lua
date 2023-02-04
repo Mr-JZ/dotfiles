@@ -25,7 +25,7 @@ vim.keymap.set("n", "<leader>cm", ":luafile ~/.config/nvim/lua/mrjz/javadocMetho
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- to past from the buffer
-vim.keymap.set("n", "<leader>p", [["+p]])
+vim.keymap.set("n", "<leader>P", [["+p]])
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])

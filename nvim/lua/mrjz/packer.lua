@@ -26,7 +26,7 @@ return require('packer').startup(function(use)
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
 
-    use ({
+    use({
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
         requires = {
@@ -46,6 +46,12 @@ return require('packer').startup(function(use)
             -- Snippets
             { 'L3MON4D3/LuaSnip' },
             { 'rafamadriz/friendly-snippets' },
+
+            -- DAP
+            -- { 'mfussenegger/nvim-dap' },
+            -- { 'rcarriga/nvim-dap-ui' },
+            -- { 'theHamsta/nvim-dap-virtual-text' },
+            -- { 'nvim-telescope/telescope-dap.nvim' },
         }
     })
 
@@ -62,7 +68,7 @@ return require('packer').startup(function(use)
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
-    use ({ "akinsho/toggleterm.nvim", tag = '*', config = function()
+    use({ "akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
     end })
 
