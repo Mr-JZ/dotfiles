@@ -16,7 +16,7 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- toggle nvim-tree
-vim.keymap.set("n", "<leader>b", vim.cmd.NvimTreeToggle)
+vim.keymap.set("n", "<leader>t", vim.cmd.NvimTreeToggle)
 
 -- use the javadocMethod file
 vim.keymap.set("n", "<leader>cm", ":luafile ~/.config/nvim/lua/mrjz/javadocMethod.lua<CR>")
