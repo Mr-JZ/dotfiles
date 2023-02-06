@@ -6,8 +6,14 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- change the buffer
-vim.keymap.set("n", "C-H", ":bprev<CR>")
-vim.keymap.set("n", "C-L", ":bnext<CR>")
+vim.keymap.set("n", "<C-H>", ":bprev<CR>")
+vim.keymap.set("n", "<C-L>", ":bnext<CR>")
+
+-- change the size of the window
+vim.keymap.set("n", "<A-h>", ":vertical resize +5<CR>")
+vim.keymap.set("n", "<A-l>", ":vertical resize -5<CR>")
+vim.keymap.set("n", "<A-j>", ":horizontal resize +5<CR>")
+vim.keymap.set("n", "<A-k>", ":horizontal resize -5<CR>")
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
