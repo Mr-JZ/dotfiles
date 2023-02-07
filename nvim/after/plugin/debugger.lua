@@ -1,8 +1,0 @@
-local dap = require('dap')
-dap.adapters.cppdbg = {
-  id = 'cppdbg',
-  type = 'executable',
-  command = '~/.local/share/nvim/mason/bin/OpenDebugAD7',
-}
-
-require"dap".configurations.java = { { type = 'java'; request = 'attach'; name = "Debug (Attach) - Remote"; hostName = "127.0.0.1"; port = 8000; }, }
