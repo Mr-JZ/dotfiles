@@ -91,7 +91,7 @@ function get_doc_comment(method_info, tab_space)
         add_line(string.format(" * @param %s ", param.name))
     end
 
-    add_line(string.format(" * @returns ", method_info.return_type))
+    add_line(string.format(" * @return ", method_info.return_type))
     add_line(" * @author Jan Henrik Zisenis")
     add_line("*/")
     add_line("")
