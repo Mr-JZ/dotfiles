@@ -1,5 +1,7 @@
 require("mrjz.set")
 require("mrjz.remap")
+require("mrjz.packer")
+require("mrjz.javadocMethod")
 
 local augroup = vim.api.nvim_create_augroup
 local ThePrimeagenGroup = augroup('ThePrimeagen', {})
