@@ -1,5 +1,5 @@
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
-
+vim.keymap.set("n", "<leader>gd", ":Gvdiffsplit!<CR>")
 local ThePrimeagen_Fugitive = vim.api.nvim_create_augroup("ThePrimeagen_Fugitive", {})
 
 local autocmd = vim.api.nvim_create_autocmd
@@ -25,5 +25,9 @@ autocmd("BufWinEnter", {
         -- NOTE: It allows me to easily set the branch i am pushing and any tracking
         -- needed if i did not set the branch up correctly
         vim.keymap.set("n", "<leader>t", ":Git push -u origin ", opts);
+
+        -- NOTE: It allows me to easily set the branch i am pushing and any tracking
+        -- needed if i did not set the branch up correctly
+        vim.keymap.set("n", "<leader>c", ":Git commit -m \"", opts);
     end,
 })
