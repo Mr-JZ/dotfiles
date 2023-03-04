@@ -4,78 +4,78 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-        -- Packer can manage itself
-        use 'wbthomason/packer.nvim'
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
-        use {
-            'nvim-telescope/telescope.nvim',
-            tag = '0.1.1',
-            -- or                            , branch = '0.1.x',
-            requires = { { 'nvim-lua/plenary.nvim' } }
+    use {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.1',
+        -- or                            , branch = '0.1.x',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
+
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+    use 'nvim-treesitter/playground'
+    use 'mbbill/undotree'
+    use 'tpope/vim-fugitive'
+
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v1.x',
+        requires = {
+            -- LSP Support
+            { 'neovim/nvim-lspconfig' },
+            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason-lspconfig.nvim' },
+
+            -- Autocompletion
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'saadparwaiz1/cmp_luasnip' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-nvim-lua' },
+
+            -- Snippets
+            { 'L3MON4D3/LuaSnip' },
+            { 'rafamadriz/friendly-snippets' },
+
+            -- DAP
+            -- { 'mfussenegger/nvim-dap' },
+            -- { 'rcarriga/nvim-dap-ui' },
+            -- { 'theHamsta/nvim-dap-virtual-text' },
+            -- { 'nvim-telescope/telescope-dap.nvim' },
         }
+    }
 
-        use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-        use 'nvim-treesitter/playground'
-        use 'mbbill/undotree'
-        use 'tpope/vim-fugitive'
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional, for file icons
+        },
+        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
+    use "folke/zen-mode.nvim"
+    -- use "github/copilot.vim"
 
-        use {
-            'VonHeikemen/lsp-zero.nvim',
-            branch = 'v1.x',
-            requires = {
-                -- LSP Support
-                { 'neovim/nvim-lspconfig' },
-                { 'williamboman/mason.nvim' },
-                { 'williamboman/mason-lspconfig.nvim' },
+    use {
+        "akinsho/toggleterm.nvim",
+        tag = '*',
+        config = function()
+            require("toggleterm").setup()
+        end
+    }
 
-                -- Autocompletion
-                { 'hrsh7th/nvim-cmp' },
-                { 'hrsh7th/cmp-buffer' },
-                { 'hrsh7th/cmp-path' },
-                { 'saadparwaiz1/cmp_luasnip' },
-                { 'hrsh7th/cmp-nvim-lsp' },
-                { 'hrsh7th/cmp-nvim-lua' },
-
-                -- Snippets
-                { 'L3MON4D3/LuaSnip' },
-                { 'rafamadriz/friendly-snippets' },
-
-                -- DAP
-                -- { 'mfussenegger/nvim-dap' },
-                -- { 'rcarriga/nvim-dap-ui' },
-                -- { 'theHamsta/nvim-dap-virtual-text' },
-                -- { 'nvim-telescope/telescope-dap.nvim' },
-            }
-        }
-
-        use {
-            'nvim-tree/nvim-tree.lua',
-            requires = {
-                'nvim-tree/nvim-web-devicons', -- optional, for file icons
-            },
-            tag = 'nightly' -- optional, updated every week. (see issue #1193)
-        }
-        use "folke/zen-mode.nvim"
-        use "github/copilot.vim"
-
-        use {
-            "akinsho/toggleterm.nvim",
-            tag = '*',
-            config = function()
-                require("toggleterm").setup()
-            end
-        }
-
-        use {
-            'numToStr/Comment.nvim',
-            config = function()
-                require('Comment').setup()
-            end
-        }
-        use 'folke/tokyonight.nvim'
-        use {
-            'nvim-lualine/lualine.nvim',
-            requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-        }
-        use 'lervag/vimtex'
-    end)
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+    use 'folke/tokyonight.nvim'
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+    use { 'lervag/vimtex' }
+end)
