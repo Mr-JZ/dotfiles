@@ -47,7 +47,10 @@ return require('packer').startup(function(use)
             -- { 'nvim-telescope/telescope-dap.nvim' },
         }
     }
-
+    use { 'nvim-orgmode/orgmode', config = function()
+        require('orgmode').setup {}
+    end
+    }
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
